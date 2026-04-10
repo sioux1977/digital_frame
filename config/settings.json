@@ -1,0 +1,17 @@
+{
+  "slideshow": {
+    "photo_duration": 20,
+    "fade_enabled": true,
+    "fade_duration": 1.0,
+    "animation_enabled": true,
+    "zoom_percent": 8,
+    "pan_x_px": 30,
+    "pan_y_px": 15,
+    "shuffle": true
+  },
+  "overlay": {
+    "clock_enabled": true,
+    "calendar_enabled": true,
+    "calendar_max_events": 5
+  }
+}
