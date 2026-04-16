@@ -17,6 +17,8 @@ from photo_repository import PhotoRepository
 from calendar_repository import CalendarRepository
 from widgets.slideshow_widget import SlideshowWidget
 
+import signal
+
 
 CONFIG_DIR = Path("/var/lib/digital-frame/config")
 PHOTOS_DIR = Path("/var/lib/digital-frame/photos")
@@ -45,10 +47,10 @@ class DigitalFrameRoot(FloatLayout):
             text="",
             size_hint=(None, None),
             size=(dp(320), dp(80)),
-            pos_hint={"right": 0.98, "top": 0.98},
+            pos_hint={"right": 0.96, "top": 0.96},
             halign="right",
             valign="middle",
-            font_size="28sp",
+            font_size="72sp",
             color=(1, 1, 1, 1),
         )
         self.clock_label.bind(size=self._sync_text_size)
@@ -206,6 +208,15 @@ class DigitalFrameApp(App):
         Window.clearcolor = (0, 0, 0, 1)
         return DigitalFrameRoot()
 
+def _do_screenshot(*args):
+    path = "/tmp/cornice.png"
+    Window.screenshot(name=path)
+    print(f"Screenshot salvato in {path}")
+
+def _handle_usr1(signum, frame):
+    Clock.schedule_once(_do_screenshot, 0)
+
+signal.signal(signal.SIGUSR1, _handle_usr1)
 
 if __name__ == "__main__":
     DigitalFrameApp().run()
