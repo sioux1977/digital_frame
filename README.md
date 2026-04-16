@@ -95,15 +95,15 @@ La versione finale della cornice digitale includerà le seguenti funzionalità.
 - [x] predisposizione esecuzione automatica
 
 ### Fase 2 - Viewer fotografico
-- [ ] caricamento immagini da directory locale
-- [ ] visualizzazione full screen
+- [x] caricamento immagini da directory locale
+- [x] visualizzazione full screen
 - [ ] rotazione automatica
 - [ ] transizioni fade
 - [ ] animazione Ken Burns
 
 ### Fase 3 - Overlay e UI
-- [ ] overlay data e ora
-- [ ] elementi grafici minimali
+- [x] overlay data e ora
+- [x] elementi grafici minimali
 - [ ] supporto touch
 - [ ] schermata impostazioni
 
